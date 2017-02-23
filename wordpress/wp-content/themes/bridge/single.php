@@ -61,10 +61,15 @@ if($single_type == 'image-title-post'){
 							<div class="overlapping_content"><div class="overlapping_content_inner">
 						<?php } ?>
 								<div class="container_inner default_template_holder" <?php qode_inline_style($content_style_spacing); ?>>
+
+
 				<?php endif; // post type end ?>
+
+
+
 					<?php if(($sidebar == "default")||($sidebar == "")) : ?>
 						<div <?php qode_class_attribute(implode(' ', $single_class)) ?>>
-						<?php 
+						<?php
 							get_template_part('templates/' . $single_loop, 'loop');
 						?>
 						<?php if($single_grid == 'no'): ?>
@@ -85,49 +90,49 @@ if($single_type == 'image-title-post'){
                         </div>
 
                     <?php elseif($sidebar == "1" || $sidebar == "2"): ?>
-						<?php if($sidebar == "1") : ?>	
+						<?php if($sidebar == "1") : ?>
 							<div class="two_columns_66_33 background_color_sidebar grid2 clearfix">
 							<div class="column1">
-						<?php elseif($sidebar == "2") : ?>	
+						<?php elseif($sidebar == "2") : ?>
 							<div class="two_columns_75_25 background_color_sidebar grid2 clearfix">
 								<div class="column1">
 						<?php endif; ?>
-					
+
 									<div class="column_inner">
 										<div <?php qode_class_attribute(implode(' ', $single_class)) ?>>
 											<?php
 											get_template_part('templates/' . $single_loop, 'loop');
 											?>
 										</div>
-										
+
 										<?php
 											if($blog_hide_comments != "yes"){
-												comments_template('', true); 
+												comments_template('', true);
 											}else{
 												echo "<br/><br/>";
 											}
-										?> 
+										?>
 									</div>
-								</div>	
-								<div class="column2"> 
+								</div>
+								<div class="column2">
 									<?php get_sidebar(); ?>
 								</div>
 							</div>
 						<?php elseif($sidebar == "3" || $sidebar == "4"): ?>
-							<?php if($sidebar == "3") : ?>	
+							<?php if($sidebar == "3") : ?>
 								<div class="two_columns_33_66 background_color_sidebar grid2 clearfix">
-								<div class="column1"> 
+								<div class="column1">
 									<?php get_sidebar(); ?>
 								</div>
 								<div class="column2">
-							<?php elseif($sidebar == "4") : ?>	
+							<?php elseif($sidebar == "4") : ?>
 								<div class="two_columns_25_75 background_color_sidebar grid2 clearfix">
-									<div class="column1"> 
+									<div class="column1">
 										<?php get_sidebar(); ?>
 									</div>
 									<div class="column2">
 							<?php endif; ?>
-							
+
 										<div class="column_inner">
 											<div <?php qode_class_attribute(implode(' ', $single_class)) ?>>
 												<?php
@@ -136,23 +141,51 @@ if($single_type == 'image-title-post'){
 											</div>
 											<?php
 												if($blog_hide_comments != "yes"){
-													comments_template('', true); 
+													comments_template('', true);
 												}else{
 													echo "<br/><br/>";
 												}
-											?> 
+											?>
 										</div>
-									</div>	
-									
+									</div>
+
 								</div>
 						<?php endif; ?>
 					</div>
                 <?php if(isset($qode_options_proya['overlapping_content']) && $qode_options_proya['overlapping_content'] == 'yes') {?>
                     </div></div>
                 <?php } ?>
+
+
+ <!-- CUSTOM POST NAVIGATION -->
+
+                  <?php if( in_category( 'Новости' ) ){ ?>
+
+  <div class="container_inner default_template_holder clearfix">
+
+
+
+
+                            <div class="portfolio_navigation ">
+                              <div class="portfolio_prev">
+                                <?php next_post_link('%link','<i class="fa fa-angle-left"></i>', true); ?>
+                              </div>
+                              <div class="portfolio_button">
+                                <a itemprop="url" href="/novosti"></a>
+                              </div>
+                              <div class="portfolio_next">
+                                <?php previous_post_link('%link','<i class="fa fa-angle-right"></i>', true); ?>
+                              </div>
+                            </div>
+
+  </div>
+
+                   <?php } ?>
+
+<!-- END CUSTOM POST NAVIGATION -->
                  </div>
 <?php endwhile; ?>
-<?php endif; ?>	
+<?php endif; ?>
 
 
-<?php get_footer(); ?>	
+<?php get_footer(); ?>
