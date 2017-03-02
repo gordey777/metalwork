@@ -14,9 +14,4 @@ CSS changes can be made in files in the /css/ folder. This is a placeholder file
 */
 
 
-.vertical_menu_area.vertically_center_content nav.vertical_menu ul {
-  vertical-align: top;
-}
-nav.vertical_menu > ul > li > a {
-  line-height: 40px;
-}
+

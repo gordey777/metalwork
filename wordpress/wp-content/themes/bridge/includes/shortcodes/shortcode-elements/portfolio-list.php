@@ -1120,7 +1120,7 @@ if (!function_exists('portfolio_list')) {
                                 $html .= "<a itemprop='image' class='lightbox qbutton small white' title='" . $title . "' href='" . $large_image . "' data-rel='prettyPhoto[" . $slug_list_ . "]'>" . __('zoom', 'qode'). "</a>";
                             }
                             if($view_button !== "no"){
-                                $html .= "<a itemprop='url' class='preview qbutton small white' href='" . $portfolio_link . "' target='".$target."'>" . __('view', 'qode'). "</a>";
+                                $html .= "<a itemprop='url' class='preview qbutton small white' href='" . $portfolio_link . "' target='".$target."'>" . "Подробнее"/*__('view', 'qode')*/. "</a>";
                             }
                             if ($portfolio_qode_like == "on") {
                                 $html .= "<span class='portfolio_like qbutton small white'>";

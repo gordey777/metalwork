@@ -1,7 +1,7 @@
-<?php 
+<?php
 global $wp_query;
 $id = $wp_query->get_queried_object_id();
-$sidebar = get_post_meta($id, "qode_show-sidebar", true);  
+$sidebar = get_post_meta($id, "qode_show-sidebar", true);
 
 $enable_page_comments = false;
 if(get_post_meta($id, "qode_enable-page-comments", true) == 'yes') {
@@ -52,10 +52,10 @@ else { $paged = 1; }
             <?php } ?>
 			<div class="container_inner default_template_holder clearfix page_container_inner" <?php qode_inline_style($content_style_spacing); ?>>
 				<?php if(($sidebar == "default")||($sidebar == "")) : ?>
-					<?php if (have_posts()) : 
+					<?php if (have_posts()) :
 							while (have_posts()) : the_post(); ?>
 							<?php the_content(); ?>
-							<?php 
+							<?php
 								$args_pages = array(
 									'before'           => '<p class="single_links_pages">',
 									'after'            => '</p>',
@@ -65,26 +65,26 @@ else { $paged = 1; }
 							?>
 							<?php
 							if($enable_page_comments){
-								comments_template('', true); 
+								comments_template('', true);
 							}
-							?> 
+							?>
 							<?php endwhile; ?>
 						<?php endif; ?>
-				<?php elseif($sidebar == "1" || $sidebar == "2"): ?>		
-					
-					<?php if($sidebar == "1") : ?>	
+				<?php elseif($sidebar == "1" || $sidebar == "2"): ?>
+
+					<?php if($sidebar == "1") : ?>
 						<div class="two_columns_66_33 background_color_sidebar grid2 clearfix">
 							<div class="column1">
-					<?php elseif($sidebar == "2") : ?>	
+					<?php elseif($sidebar == "2") : ?>
 						<div class="two_columns_75_25 background_color_sidebar grid2 clearfix">
 							<div class="column1">
 					<?php endif; ?>
-							<?php if (have_posts()) : 
+							<?php if (have_posts()) :
 								while (have_posts()) : the_post(); ?>
 								<div class="column_inner">
-								
+
 								<?php the_content(); ?>
-								<?php 
+								<?php
 									$args_pages = array(
 									'before'           => '<p class="single_links_pages">',
 									'after'            => '</p>',
@@ -95,32 +95,32 @@ else { $paged = 1; }
 								?>
 								<?php
 								if($enable_page_comments){
-									comments_template('', true); 
+									comments_template('', true);
 								}
-								?> 
+								?>
 								</div>
 						<?php endwhile; ?>
 						<?php endif; ?>
-					
-									
+
+
 							</div>
 							<div class="column2"><?php get_sidebar();?></div>
 						</div>
 					<?php elseif($sidebar == "3" || $sidebar == "4"): ?>
-						<?php if($sidebar == "3") : ?>	
+						<?php if($sidebar == "3") : ?>
 							<div class="two_columns_33_66 background_color_sidebar grid2 clearfix">
 								<div class="column1"><?php get_sidebar();?></div>
 								<div class="column2">
-						<?php elseif($sidebar == "4") : ?>	
+						<?php elseif($sidebar == "4") : ?>
 							<div class="two_columns_25_75 background_color_sidebar grid2 clearfix">
 								<div class="column1"><?php get_sidebar();?></div>
 								<div class="column2">
 						<?php endif; ?>
-								<?php if (have_posts()) : 
+								<?php if (have_posts()) :
 									while (have_posts()) : the_post(); ?>
 									<div class="column_inner">
 										<?php the_content(); ?>
-										<?php 
+										<?php
 											$args_pages = array(
 												'before'           => '<p class="single_links_pages">',
 												'after'            => '</p>',
@@ -130,19 +130,19 @@ else { $paged = 1; }
 										?>
 										<?php
 										if($enable_page_comments){
-											comments_template('', true); 
+											comments_template('', true);
 										}
-										?> 
+										?>
 									</div>
 							<?php endwhile; ?>
 							<?php endif; ?>
-						
-										
+
+
 								</div>
-								
+
 							</div>
 					<?php endif; ?>
-			
+
 		</div>
         <?php if(isset($qode_options_proya['overlapping_content']) && $qode_options_proya['overlapping_content'] == 'yes') {?>
             </div></div>

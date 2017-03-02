@@ -135,7 +135,7 @@ if(isset($qode_options_proya['disable_portfolio_single_title_label']) && $qode_o
 											case "youtube": ?>
 												<?php if($lightbox_video_single_project == "yes"){ ?>
 													<?php
-														$vidID = $portfolio_image['portfoliovideoid'];  
+														$vidID = $portfolio_image['portfoliovideoid'];
 													    $url = "http://gdata.youtube.com/feeds/api/videos/".$vidID."?alt=json";
 													    $xml = json_decode(@file_get_contents($url), true);
 
@@ -144,7 +144,7 @@ if(isset($qode_options_proya['disable_portfolio_single_title_label']) && $qode_o
 													    } else {
 													    	$video_title = "";
 													    }
-													    
+
 													    $thumbnail = "http://img.youtube.com/vi/".$vidID."/maxresdefault.jpg";
 													?>
 													<a itemprop="image" class="lightbox_single_portfolio video_in_lightbox" title="<?php echo $video_title; ?>" href="<?php echo $protocol;?>//www.youtube.com/watch?feature=player_embedded&v=<?php echo $vidID; ?>" rel="prettyPhoto[single_pretty_photo]">
@@ -586,7 +586,7 @@ if(isset($qode_options_proya['disable_portfolio_single_title_label']) && $qode_o
 							?>
 							<?php if(get_post_meta(get_the_ID(), "qode_portfolio_date", true)) : ?>
 								<div class="info portfolio_custom_date">
-									<h6><?php _e('Date','qode'); ?></h6>
+									<h6>Дата:<?php //_e('Date','qode'); ?></h6>
 									<p class="entry_date updated"><?php echo get_post_meta(get_the_ID(), "qode_portfolio_date", true); ?><meta itemprop="interactionCount" content="UserComments: <?php echo get_comments_number(qode_get_page_id()); ?>"/></p>
 								</div>
 							<?php endif; ?>
@@ -597,7 +597,7 @@ if(isset($qode_options_proya['disable_portfolio_single_title_label']) && $qode_o
 							if($all > 0){
 								?>
 								<div class="info portfolio_categories">
-									<h6><?php _e('Category ','qode'); ?></h6>
+									<h6>Сфера применения:<?php //_e('Category ','qode'); ?></h6>
 													<span class="category">
 													<?php
 
@@ -628,13 +628,13 @@ if(isset($qode_options_proya['disable_portfolio_single_title_label']) && $qode_o
 								</div>
 
 							<?php } ?>
-							<div class="portfolio_social_holder">
-								<?php echo do_shortcode('[social_share]'); ?>
-								<?php if($portfolio_qode_like == "on") { ?>
-									<span class="dots"><i class="fa fa-square"></i></span>
-									<div class="portfolio_like"><?php if( function_exists('qode_like') ) qode_like(); ?></div>
-								<?php } ?>
-							</div>
+<!--               <div class="portfolio_social_holder">
+  <?php //echo do_shortcode('[social_share]'); ?>
+  <?php //if($portfolio_qode_like >== "on") { ?>
+    <span class="dots"><i class="fa fa-square"></i></span>
+    <div class="portfolio_like"><?php //if( function_exists('qode_like') ) qode_like(); ?></div>
+  <?php //} ?>
+</div> -->
 						</div>
 					</div>
 				</div>
@@ -702,7 +702,7 @@ if(isset($qode_options_proya['disable_portfolio_single_title_label']) && $qode_o
 								case "youtube": ?>
 									<?php if($lightbox_video_single_project == "yes"){ ?>
 										<?php
-											$vidID = $portfolio_image['portfoliovideoid'];  
+											$vidID = $portfolio_image['portfoliovideoid'];
 										    $url = "http://gdata.youtube.com/feeds/api/videos/".$vidID."?alt=json";
 										    $xml = json_decode(@file_get_contents($url), true);
 
@@ -711,7 +711,7 @@ if(isset($qode_options_proya['disable_portfolio_single_title_label']) && $qode_o
 										    } else {
 										    	$video_title = "";
 										    }
-										    
+
 										    $thumbnail = "http://img.youtube.com/vi/".$vidID."/maxresdefault.jpg";
 										?>
 										<a itemprop="image" class="lightbox_single_portfolio video_in_lightbox" title="<?php echo $video_title; ?>" href="<?php echo $protocol;?>//www.youtube.com/watch?feature=player_embedded&v=<?php echo $vidID; ?>" rel="prettyPhoto[single_pretty_photo]">

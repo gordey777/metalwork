@@ -2,7 +2,7 @@
 	global $qode_options_proya;
 	$page_id = qode_get_page_id();
 ?>
-<?php 
+<?php
 $content_bottom_area = "yes";
 if(get_post_meta($page_id, "qode_enable_content_bottom_area", true) != ""){
 	$content_bottom_area = get_post_meta($page_id, "qode_enable_content_bottom_area", true);
@@ -25,7 +25,7 @@ if(get_post_meta($page_id, 'qode_content_bottom_sidebar_in_grid', true) != ""){
 		$content_bottom_area_in_grid = true;
 	} else {
 		$content_bottom_area_in_grid = false;
-	} 
+	}
 }
 else {
 	if(isset($qode_options_proya['content_bottom_in_grid'])){if ($qode_options_proya['content_bottom_in_grid'] == "no") $content_bottom_area_in_grid = false;}
@@ -48,7 +48,7 @@ if(get_post_meta($page_id, "qode_content_bottom_background_color", true) != ""){
 				</div>
 			<?php } ?>
 	<?php } ?>
-	
+
 	</div>
 </div>
 
@@ -114,7 +114,7 @@ if(is_array($footer_classes_array) && count($footer_classes_array)) {
 			}
 		}
 
-		
+
 		$footer_top_columns = 4;
 		if (isset($qode_options_proya['footer_top_columns'])) {
 			$footer_top_columns = $qode_options_proya['footer_top_columns'];
@@ -149,7 +149,7 @@ if(is_array($footer_classes_array) && count($footer_classes_array)) {
 				<div class="container">
 					<div class="container_inner">
 				<?php } ?>
-						<?php switch ($footer_top_columns) { 
+						<?php switch ($footer_top_columns) {
 							case 6:
 						?>
 							<div class="two_columns_50_50 clearfix">
@@ -174,8 +174,8 @@ if(is_array($footer_classes_array) && count($footer_classes_array)) {
 										</div>
 									</div>
 								</div>
-							</div>							
-						<?php 
+							</div>
+						<?php
 							break;
 							case 5:
 						?>
@@ -201,8 +201,8 @@ if(is_array($footer_classes_array) && count($footer_classes_array)) {
 										<?php dynamic_sidebar( 'footer_column_3' ); ?>
 									</div>
 								</div>
-							</div>							
-						<?php 
+							</div>
+						<?php
 							break;
 							case 4:
 						?>
@@ -404,9 +404,14 @@ if(is_array($footer_classes_array) && count($footer_classes_array)) {
 		</div>
 	</footer>
 	<?php } ?>
-	
+
 </div>
 </div>
 <?php wp_footer(); ?>
+<script>
+  jQuery(document).ready(function(){
+    jQuery("#gmaps-row").appendTo(".container");
+  });
+</script>
 </body>
 </html>

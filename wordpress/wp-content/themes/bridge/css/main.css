@@ -1,0 +1,131 @@
+.wpcf7 form.wpcf7-form .text__input {
+  display: block;
+
+  width: 100%;
+  padding: 0;
+
+  text-align: center;
+}
+
+.wpcf7 form.wpcf7-form .text__input div {
+  display: inline-block;
+  float: none;
+
+  width: 31.4%;
+  margin: 0 1%;
+}
+.wpcf7 form.wpcf7-form .text__input div:last-child {
+  margin-right: 0;
+}.wpcf7 form.wpcf7-form .text__input div:first-child {
+  margin-left: 0;
+}
+
+
+#popmake-476 textarea,
+#popmake-476 input.name-contacts {
+  font-family: Open Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding-top: 14px;
+  padding-right: 0;
+  padding-bottom: 15px;
+  padding-left: 18px;
+
+  color: #252525;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0,0,0,1);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+#wpcf7-f432-p431-o1 .submit__wrapp {
+  margin-top: 10px;
+}
+#wpcf7-f432-p431-o1 .submit__wrapp .wpcf7-submit {
+  display: block;
+
+  width: 60%;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+#news__butoon {
+  position: absolute;
+  z-index: 99;
+  top: 5%;
+  right: 10%;
+}
+
+
+.single_top_part_inner .section_inner .post_author {
+  display: none;
+}
+.single_top_part_inner .section_inner .vertical_separator {
+  display: none;
+}
+.single_top_part_inner .section_inner .post_category {
+  display: none !important;
+}
+
+.post_text_inner {
+  margin: 0 auto;
+}
+
+/* .vertical_menu_area.vertically_center_content nav.vertical_menu {
+  margin-top: 135px;
+  margin-bottom: 0;
+  padding: 0;
+  max-height: 48vh;
+} */
+
+.vertical_logo_wrapper {
+    z-index: 999;
+    position: relative;
+}
+
+@media only screen and (max-width: 1460px) and (min-width: 1000px) {
+  .post_text_inner {
+    max-width: 950px;
+  }
+}
+
+@media only screen and (max-width: 1260px) and (min-width: 1000px) {
+  .post_text_inner {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .post_text_inner {
+    max-width: 1300px;
+  }
+}
+
+@media only screen and (max-width: 1560px) and (min-width: 1400px) {
+  .post_text_inner {
+    max-width: 1100px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  #section-md5 .vc_col-lg-3 {
+    width: 20% !important;
+  }
+  #section-md5 .vc_col-sm-3 {
+    width: 20% !important;
+  }
+  #section-md5 .vc_col-md-3 {
+    width: 20% !important;
+  }
+}

@@ -1,4 +1,4 @@
-<?php 
+<?php
 global $qode_options_proya;
 $blog_hide_comments = "";
 if (isset($qode_options_proya['blog_hide_comments'])) {
@@ -23,21 +23,21 @@ $_post_format = get_post_format();
 					<iframe name="fitvid-<?php the_ID(); ?>" src="//www.youtube.com/embed/<?php echo get_post_meta(get_the_ID(), "video_format_link", true);  ?>?wmode=transparent" wmode="Opaque" width="805" height="403" allowfullscreen></iframe>
 				<?php } elseif ($_video_type == "vimeo"){ ?>
 					<iframe name="fitvid-<?php the_ID(); ?>" src="//player.vimeo.com/video/<?php echo get_post_meta(get_the_ID(), "video_format_link", true);  ?>?title=0&amp;byline=0&amp;portrait=0" width="805" height="403" allowfullscreen></iframe>
-				<?php } elseif ($_video_type == "self"){ ?> 
-					<div class="video"> 
-					<div class="mobile-video-image" style="background-image: url(<?php echo get_post_meta(get_the_ID(), "video_format_image", true);  ?>);"></div> 
-					<div class="video-wrap"  > 
-						<video class="video" poster="<?php echo get_post_meta(get_the_ID(), "video_format_image", true);  ?>" preload="auto"> 
-							<?php if(get_post_meta(get_the_ID(), "video_format_webm", true) != "") { ?> <source type="video/webm" src="<?php echo get_post_meta(get_the_ID(), "video_format_webm", true);  ?>"> <?php } ?> 
-							<?php if(get_post_meta(get_the_ID(), "video_format_mp4", true) != "") { ?> <source type="video/mp4" src="<?php echo get_post_meta(get_the_ID(), "video_format_mp4", true);  ?>"> <?php } ?> 
-							<?php if(get_post_meta(get_the_ID(), "video_format_ogv", true) != "") { ?> <source type="video/ogg" src="<?php echo get_post_meta(get_the_ID(), "video_format_ogv", true);  ?>"> <?php } ?> 
-							<object width="320" height="240" type="application/x-shockwave-flash" data="<?php echo get_template_directory_uri(); ?>/js/flashmediaelement.swf"> 
-								<param name="movie" value="<?php echo get_template_directory_uri(); ?>/js/flashmediaelement.swf" /> 
-								<param name="flashvars" value="controls=true&file=<?php echo get_post_meta(get_the_ID(), "video_format_mp4", true);  ?>" /> 
-								<img itemprop="image" src="<?php echo get_post_meta(get_the_ID(), "video_format_image", true);  ?>" width="1920" height="800" title="No video playback capabilities" alt="Video thumb" /> 
-							</object> 
-						</video>   
-					</div></div> 
+				<?php } elseif ($_video_type == "self"){ ?>
+					<div class="video">
+					<div class="mobile-video-image" style="background-image: url(<?php echo get_post_meta(get_the_ID(), "video_format_image", true);  ?>);"></div>
+					<div class="video-wrap"  >
+						<video class="video" poster="<?php echo get_post_meta(get_the_ID(), "video_format_image", true);  ?>" preload="auto">
+							<?php if(get_post_meta(get_the_ID(), "video_format_webm", true) != "") { ?> <source type="video/webm" src="<?php echo get_post_meta(get_the_ID(), "video_format_webm", true);  ?>"> <?php } ?>
+							<?php if(get_post_meta(get_the_ID(), "video_format_mp4", true) != "") { ?> <source type="video/mp4" src="<?php echo get_post_meta(get_the_ID(), "video_format_mp4", true);  ?>"> <?php } ?>
+							<?php if(get_post_meta(get_the_ID(), "video_format_ogv", true) != "") { ?> <source type="video/ogg" src="<?php echo get_post_meta(get_the_ID(), "video_format_ogv", true);  ?>"> <?php } ?>
+							<object width="320" height="240" type="application/x-shockwave-flash" data="<?php echo get_template_directory_uri(); ?>/js/flashmediaelement.swf">
+								<param name="movie" value="<?php echo get_template_directory_uri(); ?>/js/flashmediaelement.swf" />
+								<param name="flashvars" value="controls=true&file=<?php echo get_post_meta(get_the_ID(), "video_format_mp4", true);  ?>" />
+								<img itemprop="image" src="<?php echo get_post_meta(get_the_ID(), "video_format_image", true);  ?>" width="1920" height="800" title="No video playback capabilities" alt="Video thumb" />
+							</object>
+						</video>
+					</div></div>
 				<?php } ?>
 			</div>
 			<div class="post_text">
@@ -52,7 +52,7 @@ $_post_format = get_post_format();
 					</div>
 				</div>
 			</div>
-		</article>	
+		</article>
 
 <?php
 		break;
@@ -90,7 +90,7 @@ $_post_format = get_post_format();
 								<?php if($blog_hide_comments != "yes"){ ?>
 								 / <a itemprop="url" class="post_comments" href="<?php comments_link(); ?>" target="_self"><?php comments_number('0 ' . __('Comments','qode'), '1 '.__('Comment','qode'), '% '.__('Comments','qode') ); ?></a>
 								<?php } ?>
-							</div>	
+							</div>
 							<i class="link_mark fa fa-link pull-left"></i>
 							<div class="post_title entry_title">
 								<p><a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
@@ -111,7 +111,7 @@ $_post_format = get_post_format();
 								$post_content = get_the_content();
 								preg_match('/\[gallery.*ids=.(.*).\]/', $post_content, $ids);
 								$array_id = explode(",", $ids[1]);
-								
+
 								foreach($array_id as $img_id){ ?>
 									<li><a itemprop="url" target="_self" href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image( $img_id, 'full' ); ?></a></li>
 								<?php } ?>
@@ -144,7 +144,7 @@ $_post_format = get_post_format();
 							<?php if($blog_hide_comments != "yes"){ ?>
 							 / <a itemprop="url" class="post_comments" href="<?php comments_link(); ?>" target="_self"><?php comments_number('0 ' . __('Comments','qode'), '1 '.__('Comment','qode'), '% '.__('Comments','qode') ); ?></a>
 							<?php } ?>
-						</div>	
+						</div>
 						<i class="qoute_mark fa fa-quote-right pull-left"></i>
 						<div class="post_title entry_title">
 							<p><a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo get_post_meta(get_the_ID(), "quote_format", true); ?></a></p>
@@ -169,9 +169,9 @@ $_post_format = get_post_format();
 			<div class="post_text">
 				<div class="post_text_inner">
 					<h5 itemprop="name" class="entry_title"><a itemprop="url" href="<?php the_permalink(); ?>" target="_self" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h5>
-					<?php qode_excerpt(); ?>
+					<?php //qode_excerpt(); ?> <!-- no description -->
 					<div class="post_info">
-						<span itemprop="dateCreated" class="time entry_date updated"><?php the_time('d F, Y'); ?><meta itemprop="interactionCount" content="UserComments: <?php echo get_comments_number(qode_get_page_id()); ?>"/></span>
+						<span itemprop="dateCreated" class="time entry_date updated"><?php the_time('d m Y'); ?><meta itemprop="interactionCount" content="UserComments: <?php echo get_comments_number(qode_get_page_id()); ?>"/></span>
 						<?php if($blog_hide_comments != "yes"){ ?>
 							 / <a itemprop="url" class="post_comments" href="<?php comments_link(); ?>" target="_self"><?php comments_number('0 ' . __('Comments','qode'), '1 '.__('Comment','qode'), '% '.__('Comments','qode') ); ?></a>
 						<?php } ?>
@@ -181,5 +181,5 @@ $_post_format = get_post_format();
 		</article>
 <?php
 }
-?>		
+?>
 
